@@ -46,7 +46,7 @@ The KL divergence $$D_{KL}(P \parallel Q)\geq0$$ between two discrete probabilit
 
 $$\begin{align}
 \displaystyle D_{KL}(P \parallel Q) &= \sum_{x \in \mathcal{X}} P(x) \log \left( \frac{P(x)}{Q(x)} \right) \\
-& = H(P, Q) - H(P)
+&= H(P, Q) - H(P)
 \end{align}$$
 
 - $$P(x)$$: True probability distribution.
@@ -58,4 +58,5 @@ $$\begin{align}
 
 ### Key properties
 
-- The KL divergence corresponds to the "extra bits" that are wasted by using $$Q$$ instead of $$P$$.
+> [!NOTE]message
+>- The KL divergence corresponds to the "extra bits" that are wasted by using $$Q$$ instead of $$P$$.
