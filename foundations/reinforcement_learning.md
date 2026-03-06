@@ -29,4 +29,4 @@ $$V^\pi(s) = \sum_{a \in \mathcal{A}} \Bigg( \pi(a|s) \sum_{s' \in \mathcal{S}, 
 
 The Bellman optimality equation is used to calculate the maximum possible value of a state under the optimal policy.
 
-$$V^*(s) = \max_{a \in \mathcal{A}} \sum_{s', r} p(s', r \mid s, a) \Big(r + \gamma V^*(s')\Big)$$
+$$V^\*(s) = \max_{a \in \mathcal{A}} \sum_{s', r} p(s', r \mid s, a) \Big(r + \gamma V^\*(s')\Big)$$

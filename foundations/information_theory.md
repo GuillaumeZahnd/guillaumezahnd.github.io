@@ -58,5 +58,5 @@ $$\begin{align}
 
 ### Key properties
 
-> [!NOTE]message
+> [!NOTE]
 >- The KL divergence corresponds to the "extra bits" that are wasted by using $$Q$$ instead of $$P$$.
