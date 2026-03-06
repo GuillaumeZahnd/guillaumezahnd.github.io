@@ -1,0 +1,12 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+.MathJax {
+  font-size: 1.3em !important;
+}
+
+.MathJax_Display {
+  font-size: 1.3em !important;
+}
