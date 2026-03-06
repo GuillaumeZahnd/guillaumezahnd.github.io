@@ -9,3 +9,5 @@ kramdown:
 
 plugins:
   - jekyll-remote-theme
+  
+custom_css: assets/css/custom.css  
