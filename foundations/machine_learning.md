@@ -29,7 +29,7 @@ $$RMSE = \sqrt{\frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2}$$
 
 $$\sigma(\mathbf{z})_i = \frac{e^{z_i}}{\sum_{j=1}^{n} e^{z_j}}$$
 
-> [!Caution]
+> [!CAUTION]
 > Risk of overflow
 > Risk of underflow
 
@@ -37,9 +37,9 @@ $$\sigma(\mathbf{z})_i = \frac{e^{z_i}}{\sum_{j=1}^{n} e^{z_j}}$$
 
 $$\begin{align}
 \sigma(\mathbf{z})_i &= \frac{e^{z_i}}{\sum_{j=1}^{n} e^{z_j}} \\
-&= \frac{e^{z_i}}{\sum_{j=1}^{n} e^{z_j}} \cdot \frac{e^{-M}}{e^{-M}} \quad \text{with~}M=max_i(z_i) \\
+&= \frac{e^{z_i}}{\sum_{j=1}^{n} e^{z_j}} \cdot \frac{e^{-M}}{e^{-M}} \quad \text{with }M=max_i(z_i) \\
 &= \frac{e^{z_i-M}}{\sum_{j=1}^{n} e^{z_j-M}} \\
-&= \frac{e^{z_i}}{\sum_{j=1}^{n} e^{z_j}} \quad \text{with~}\mathbf{x} = \mathbf{z} - M \\
+&= \frac{e^{z_i}}{\sum_{j=1}^{n} e^{z_j}} \quad \text{with }\mathbf{x} = \mathbf{z} - M \\
 &= \sigma(\mathbf{x})_i
 \end{align}$$
 
@@ -54,7 +54,7 @@ $$\begin{align}
 $$\begin{align}
 log\Big(\sigma(\mathbf{z})_i\Big) &= log\left(\frac{e^{z_i}}{\sum_{j=1}^{n} e^{z_j}}\right) \\
 &=log(e^{z_i}) - log\left(\sum_{j=1}^{n} e^{z_j}\right) \\
-&=z_i - log\left(\sum_{j=1}^{n} e^{z_j - M + M}\right) \quad \text{with~}M=max_i(z_i) \\
+&=z_i - log\left(\sum_{j=1}^{n} e^{z_j - M + M}\right) \quad \text{with }M=max_i(z_i) \\
 &=z_i - log\left(\sum_{j=1}^{n} e^{z_j - M} \cdot e^M\right) \\
 &=z_i - M - log\left(\sum_{j=1}^{n} e^{z_j - M}\right) \\
 \end{align}$$
