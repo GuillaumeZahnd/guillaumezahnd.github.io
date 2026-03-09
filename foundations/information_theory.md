@@ -17,9 +17,9 @@ The entropy $$H(X)\geq0$$ for a discrete random variable $$X$$ is defined as:
 
 $$\displaystyle H(X) = -\sum_{x \in \mathcal{X}} P(x) \log_b P(x)$$
 
-- $$P(x)$$: Probability that the random variable $$X$$ takes a specific value $$x$$ from the set $$\mathcal{X}$$.
--  $$\mathcal{X}$$: Set of all possible outcomes.
-- $$b$$​: Logarithm base (in base 2, the entropy is expressed in bits).
+- $$P(x) : $$ Probability that the random variable $$X$$ takes a specific value $$x$$ from the set $$\mathcal{X}$$.
+-  $$\mathcal{X} : $$ Set of all possible outcomes.
+- $$b : $$ Logarithm base (in base 2, the entropy is expressed in bits).
 
 ## Cross-entropy
 
@@ -32,11 +32,11 @@ $$\begin{align}
 & \geq H(P)
 \end{align}$$
 
-- $$P(x)$$: True probability distribution.
-- $$Q(x)$$: Estimated probability distribution.
-- $$H(P)$$: Entropy of the true probability distribution. 
-- $$\mathcal{X}$$: Set of all possible outcomes.
-- $$b$$​: Logarithm base (in base 2, the entropy is expressed in bits).
+- $$P(x) : $$ True probability distribution.
+- $$Q(x) : $$ Estimated probability distribution.
+- $$H(P) : $$ Entropy of the true probability distribution. 
+- $$\mathcal{X} : $$ Set of all possible outcomes.
+- $$b : $$ Logarithm base (in base 2, the entropy is expressed in bits).
 
 ## Kullback-Leibler divergence
 
@@ -49,12 +49,12 @@ $$\begin{align}
 &= H(P, Q) - H(P)
 \end{align}$$
 
-- $$P(x)$$: True probability distribution.
-- $$Q(x)$$: Estimated probability distribution.
-- $$H(P)$$: Entropy of the true probability distribution. 
-- $$H(P, Q)$$: Cross-entropy between the estimated and the true probability distributions. 
-- $$\mathcal{X}$$: Set of all possible outcomes.
-- $$b$$​: Logarithm base (in base 2, the entropy is expressed in bits).
+- $$P(x) : $$ True probability distribution.
+- $$Q(x) : $$ Estimated probability distribution.
+- $$H(P) : $$ Entropy of the true probability distribution. 
+- $$H(P, Q) : $$ Cross-entropy between the estimated and the true probability distributions. 
+- $$\mathcal{X} : $$ Set of all possible outcomes.
+- $$b : $$ Logarithm base (in base 2, the entropy is expressed in bits).
 
 ### Key properties
 

@@ -19,7 +19,7 @@ $$\begin{align}
 \end{align}$$
 
 > [!NOTE]
-> The dot product is a scalar value that measures the extent to which one vector aligns with another.
+> - The dot product is a scalar value that measures the extent to which one vector aligns with another.
 
 ## Eigenvector and eigenvalues
 
@@ -29,9 +29,9 @@ Let $$A$$ be a square matrix. A non-zero vector $$\mathbf{v}$$ is an eigenvector
 - An eigenvalue $$\lambda$$ represents the scaling factor of the corresponding eigenvector under the linear transformation $$A$$.
 
 > [!NOTE]
-> A matrix $$A \in \mathbb{K}^{n \times n}$$ has exactly $$n$$ eigenvalues (counted with multiplicity) in $$\mathbb{C}$$, and at most $$n$$ distinct ones.
-> Eigenvalues are the roots of the *characteristic equation* $$\det(A - \lambda I) = 0$$.
-> Diagonalization theorem: $$A \in \mathbb{K}^{n \times n}$$ is diagonalizable if and only if
+> - A matrix $$A \in \mathbb{K}^{n \times n}$$ has exactly $$n$$ eigenvalues (counted with multiplicity) in $$\mathbb{C}$$, and at most $$n$$ distinct ones.
+> - Eigenvalues are the roots of the *characteristic equation* $$\det(A - \lambda I) = 0$$.
+> - Diagonalization theorem: $$A \in \mathbb{K}^{n \times n}$$ is diagonalizable if and only if
 it has $$n$$ linearly independent eigenvectors (that is, they form a basis of $$\mathbb{K}^{n}$$).
 
 ## Trace
