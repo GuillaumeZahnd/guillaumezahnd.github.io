@@ -28,7 +28,7 @@ Cross-entropy measures the average quantity of information required to identify 
 The cross-entropy $$H(P, Q)\geq0$$ between two discrete probability distributions $$P$$ and $$Q$$ is defined as:
 
 $$\begin{align}
-\displaystyle H(P, Q) &= -\sum_{x \in \mathcal{X}} P(x) \log_b Q(x)\\
+\displaystyle H(P, Q) &= -\sum_{x \in \mathcal{X}} P(x) \log_b Q(x)\\[6pt]
 & \geq H(P)
 \end{align}$$
 
@@ -45,7 +45,7 @@ The Kullback-Leibler (KL) divergence (also known as relative entropy), measures 
 The KL divergence $$D_{KL}(P \parallel Q)\geq0$$ between two discrete probability distributions $$P$$ and $$Q$$ is defined as:
 
 $$\begin{align}
-\displaystyle D_{KL}(P \parallel Q) &= \sum_{x \in \mathcal{X}} P(x) \log \left( \frac{P(x)}{Q(x)} \right) \\
+\displaystyle D_{KL}(P \parallel Q) &= \sum_{x \in \mathcal{X}} P(x) \log \left( \frac{P(x)}{Q(x)} \right) \\[6pt]
 &= H(P, Q) - H(P)
 \end{align}$$
 
