@@ -27,7 +27,7 @@ $$\textbf{posterior} \propto \textbf{likelihood} \times \textbf{prior}$$
 The Bernoulli distribution is the simplest discrete probability distribution, representing a single trial with two possible outcomes (success or failure).
 
 $$\begin{align}
-f(k; p) &= \begin{cases} p & \text{if } k = 1 \\ 1-p & \text{if } k = 0 \end{cases} \\[6pt]
+f(k; p) &= \begin{cases} p & \text{if } k = 1 \\ 1-p & \text{if } k = 0 \end{cases} \\\[6pt]
 &= p^k (1-p)^{1-k} \quad k \in \{0,1\}
 \end{align}$$
 
