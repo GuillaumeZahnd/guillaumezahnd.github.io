@@ -1,13 +1,13 @@
 ---
 layout: default
-title: Mechine learning
+title: Machine learning
 nav_order: 3
 parent: Foundations
 grand_parent: Home
 has_children: false
 ---
 
-# Mechine learning
+# Machine learning
 
 ## Categorical cross-entropy loss
 
