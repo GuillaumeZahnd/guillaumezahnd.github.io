@@ -3,7 +3,10 @@ description: Homepage
 url: "https://guillaumezahnd.github.io"
 baseurl: ""
 
-remote_theme: just-the-docs/just-the-docs
+remote_theme: mmistakes/minimal-mistakes
+plugins:
+  - jekyll-remote-theme
+  - jekyll-include-cache
 
 kramdown:
   math_engine: mathjax
