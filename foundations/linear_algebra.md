@@ -14,7 +14,7 @@ has_children: false
 The dot product of two vectors $$\mathbf{a} = [a_1, a_2, \cdots, a_n]$$ and $$\mathbf{b} = [b_1, b_2, \cdots, b_n]$$ is defined as:
 
 $$\begin{align}
-\mathbf{a} \cdot \mathbf{b} &:= \sum_{i=1}^{n} a_i b_i \\\[6pt]
+\mathbf{a} \cdot \mathbf{b} &:= \sum_{i=1}^{n} a_i b_i \\\\[6pt]
 &=\left\|\mathbf{a}\right\| \left\|\mathbf{b}\right\| \cos\theta \quad \text{where } \theta \text{ is the angle between } \mathbf{a} \text{ and } \mathbf{b}
 \end{align}$$
 

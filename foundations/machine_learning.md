@@ -36,10 +36,10 @@ $$\sigma(\mathbf{z})_i = \frac{e^{z_i}}{\sum_{j=1}^{n} e^{z_j}}$$
 ## Stable softmax
 
 $$\begin{align}
-\sigma(\mathbf{z})_i &= \frac{e^{z_i}}{\sum_{j=1}^{n} e^{z_j}} \\\[6pt]
-&= \frac{e^{z_i}}{\sum_{j=1}^{n} e^{z_j}} \cdot \frac{e^{-M}}{e^{-M}} \quad \text{with }M=max_i(z_i) \\\[6pt]
-&= \frac{e^{z_i-M}}{\sum_{j=1}^{n} e^{z_j-M}} \\\[6pt]
-&= \frac{e^{z_i}}{\sum_{j=1}^{n} e^{z_j}} \quad \text{with }\mathbf{x} = \mathbf{z} - M \\\[6pt]
+\sigma(\mathbf{z})_i &= \frac{e^{z_i}}{\sum_{j=1}^{n} e^{z_j}} \\\\[6pt]
+&= \frac{e^{z_i}}{\sum_{j=1}^{n} e^{z_j}} \cdot \frac{e^{-M}}{e^{-M}} \quad \text{with }M=max_i(z_i) \\\\[6pt]
+&= \frac{e^{z_i-M}}{\sum_{j=1}^{n} e^{z_j-M}} \\\\[6pt]
+&= \frac{e^{z_i}}{\sum_{j=1}^{n} e^{z_j}} \quad \text{with }\mathbf{x} = \mathbf{z} - M \\\\[6pt]
 &= \sigma(\mathbf{x})_i
 \end{align}$$
 
@@ -52,10 +52,10 @@ $$\begin{align}
 ## Log-Sum-Exp trick
 
 $$\begin{align}
-log\Big(\sigma(\mathbf{z})_i\Big) &= log\left(\frac{e^{z_i}}{\sum_{j=1}^{n} e^{z_j}}\right) \\\[6pt]
-&=log(e^{z_i}) - log\left(\sum_{j=1}^{n} e^{z_j}\right) \\\[6pt]
-&=z_i - log\left(\sum_{j=1}^{n} e^{z_j - M + M}\right) \quad \text{with }M=max_i(z_i) \\\[6pt]
-&=z_i - log\left(\sum_{j=1}^{n} e^{z_j - M} \cdot e^M\right) \\\[6pt]
+log\Big(\sigma(\mathbf{z})_i\Big) &= log\left(\frac{e^{z_i}}{\sum_{j=1}^{n} e^{z_j}}\right) \\\\[6pt]
+&=log(e^{z_i}) - log\left(\sum_{j=1}^{n} e^{z_j}\right) \\\\[6pt]
+&=z_i - log\left(\sum_{j=1}^{n} e^{z_j - M + M}\right) \quad \text{with }M=max_i(z_i) \\\[6p\t]
+&=z_i - log\left(\sum_{j=1}^{n} e^{z_j - M} \cdot e^M\right) \\\\[6pt]
 &=z_i - M - log\left(\sum_{j=1}^{n} e^{z_j - M}\right)
 \end{align}$$
 
