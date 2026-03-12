@@ -3,28 +3,13 @@ description: Homepage
 url: "https://guillaumezahnd.github.io"
 baseurl: ""
 
-remote_theme: mmistakes/minimal-mistakes
-
-plugins:
-  - jekyll-remote-theme
-  - jekyll-include-cache
-  - jekyll-sitemap
-  - jekyll-gist
+remote_theme: just-the-docs/just-the-docs
 
 markdown: kramdown
 kramdown:
   math_engine: mathjax
 
-defaults:
-  - scope:
-      path: ""
-      type: "pages"
-    values:
-      layout: "single"
-      author_profile: true
-  - scope:
-      path: ""
-      type: "posts"
-    values:
-      layout: "single"
-      author_profile: true
+plugins:
+  - jekyll-remote-theme
+  
+custom_css: assets/css/custom.css  
