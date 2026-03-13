@@ -37,7 +37,7 @@ $$J = \begin{bmatrix} \nabla f_1 \\ \nabla f_2 \\ \vdots \\ \nabla f_m \end{bmat
 
 with
 
-$$\displaystyle \frac{\partial f_j}{\partial x_i} = \frac{\partial f_j(x_1, x_2, \dots, x_j, \dots, x_n)}{\partial x_i}$$
+$$\frac{\partial f_j}{\partial x_i} = \frac{\partial f_j(x_1, x_2, \dots, x_j, \dots, x_n)}{\partial x_i}$$
 
 ## Derivative
 
@@ -45,15 +45,15 @@ $$\displaystyle \frac{\partial f_j}{\partial x_i} = \frac{\partial f_j(x_1, x_2,
 | --- | --- | --- |
 | **Power rule** | $$f(x) = x^n$$ | $$f'(x) = nx^{n-1}$$ |
 | **Exponential** | $$f(x) = e^{x}$$ | $$f'(x) = e^x$$ |
-| **Natural log** | $$f(x) = \ln(x)$$ | $$\displaystyle f'(x) = \frac{1}{x}$$ |
-| **Inverse** | $$x = f(y)$$ | $$\displaystyle \frac{dy}{dx} = \frac{1}{f'(y)}$$ |
+| **Natural log** | $$f(x) = \ln(x)$$ | $$f'(x) = \frac{1}{x}$$ |
+| **Inverse** | $$x = f(y)$$ | $$\frac{dy}{dx} = \frac{1}{f'(y)}$$ |
 | **Absolute** | $$f(x) = \mid x \mid$$ | $$f'(x) = \text{sign}(x)$$ |
 | **Generalized power** | $$h(x) = [f(x)]^n$$ | $$h'(x) = n[f(x)]^{n-1} \cdot f'(x)$$ |
-| **Composition** | $$h(x) = \displaystyle f\Big(g(x)\Big) = (f \circ g)(x)$$ | Chain rule:<br><br>$$h'(x) = f'\Big(g(x)\Big)\cdot g'(x)$$ |
-| **Product** | $$\displaystyle h(x) = f(x)g(x)$$ | $$h'(x) = f'(x)g(x) + f(x)g'(x)$$|
-| **Quotient** | $$\displaystyle f(x) = \frac{a(x)}{b(x)}$$ | $$\displaystyle f'(x) = \frac{a'(x)b(x) - a(x)b'(x)}{b(x)^2}$$ |
-| **Sigmoid** | $$\displaystyle S(x) = \frac{1}{1 + e^{-x}}$$ | $$S'(x) = S(x) \cdot \Big(1 - S(x)\Big)$$ |
-| **Softmax** | $$\displaystyle \sigma(\mathbf{z})_i = \frac{e^{z_i}}{\sum_{k=1}^{K} e^{z_k}}$$ | Case 1, $$i=j$$ (diagonal):<br><br>$$\displaystyle \frac{\partial \sigma(z)_i}{\partial z_i} = \sigma(z)_i\Big(1 - \sigma(z)_i\Big)$$<br><br>Case 2, $$i \neq j$$ (off-diagonal):<br><br>$$\displaystyle \frac{\partial \sigma(z)_i}{\partial z_j} = -\sigma(z)_i \sigma(z)_j$$ |
+| **Composition** | $$h(x) = f\Big(g(x)\Big) = (f \circ g)(x)$$ | Chain rule:<br><br>$$h'(x) = f'\Big(g(x)\Big)\cdot g'(x)$$ |
+| **Product** | $$h(x) = f(x)g(x)$$ | $$h'(x) = f'(x)g(x) + f(x)g'(x)$$|
+| **Quotient** | $$f(x) = \frac{a(x)}{b(x)}$$ | $$f'(x) = \frac{a'(x)b(x) - a(x)b'(x)}{b(x)^2}$$ |
+| **Sigmoid** | $$S(x) = \frac{1}{1 + e^{-x}}$$ | $$S'(x) = S(x) \cdot \Big(1 - S(x)\Big)$$ |
+| **Softmax** | $$\sigma(\mathbf{z})_i = \frac{e^{z_i}}{\sum_{k=1}^{K} e^{z_k}}$$ | Case 1, $$i=j$$ (diagonal):<br><br>$$\frac{\partial \sigma(z)_i}{\partial z_i} = \sigma(z)_i\Big(1 - \sigma(z)_i\Big)$$<br><br>Case 2, $$i \neq j$$ (off-diagonal):<br><br>$$\frac{\partial \sigma(z)_i}{\partial z_j} = -\sigma(z)_i \sigma(z)_j$$ |
 
 ## Single-variable chain rule
 
@@ -77,4 +77,4 @@ $$J_{g \circ f} = J_g \cdot J_f$$
 
 A function $$f$$ can be approximated to order $$n$$ around $$x=a$$ using the $$n$$-th degree Taylor polynomial $$P_n​(x)$$:
 
-$$\displaystyle f(x) \approx P_n​(x) = \sum_{k=0}^{n} \frac{f^{(k)}(a)}{k!} (x-a)^k$$
+$$f(x) \approx P_n​(x) = \sum_{k=0}^{n} \frac{f^{(k)}(a)}{k!} (x-a)^k$$
