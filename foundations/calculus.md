@@ -53,7 +53,7 @@ $$\frac{\partial f_j}{\partial x_i} = \frac{\partial f_j(x_1, x_2, \dots, x_j, \
 | **Product** | $$h(x) = f(x)g(x)$$ | $$h'(x) = f'(x)g(x) + f(x)g'(x)$$|
 | **Quotient** | $$f(x) = \frac{a(x)}{b(x)}$$ | $$f'(x) = \frac{a'(x)b(x) - a(x)b'(x)}{b(x)^2}$$ |
 | **Sigmoid** | $$S(x) = \frac{1}{1 + e^{-x}}$$ | $$S'(x) = S(x) \cdot \Big(1 - S(x)\Big)$$ |
-| **Softmax** | $$\sigma(\mathbf{z})_i = \frac{e^{z_i}}{\sum_{k=1}^{K} e^{z_k}}$$ | Case 1, $$i=j$$ (diagonal):<br><br>$$\frac{\partial \sigma(z)_i}{\partial z_i} = \sigma(z)_i\Big(1 - \sigma(z)_i\Big)$$<br><br>Case 2, $$i \neq j$$ (off-diagonal):<br><br>$$\frac{\partial \sigma(z)_i}{\partial z_j} = -\sigma(z)_i \sigma(z)_j$$ |
+| **Softmax** | $$\sigma(\mathbf{z})\_i = \frac{e^{z_i}}{\sum_{k=1}^{K} e^{z_k}}$$ | Case 1, $$i=j$$ (diagonal):<br><br>$$\frac{\partial \sigma(z)_i}{\partial z_i} = \sigma(z)_i\Big(1 - \sigma(z)_i\Big)$$<br><br>Case 2, $$i \neq j$$ (off-diagonal):<br><br>$$\frac{\partial \sigma(z)_i}{\partial z_j} = -\sigma(z)_i \sigma(z)_j$$ |
 
 ## Single-variable chain rule
 
