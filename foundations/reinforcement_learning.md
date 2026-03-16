@@ -13,12 +13,12 @@ has_children: false
 | Name | Notation | Description |
 | :--- | :--- | :--- |
 | **Agent** | -- | Autonomous entity or learner that interprets environment feedback to make decisions. Its primary function is to map perceived states $$s$$ to specific actions while optimizing a behavioral policy $$\pi$$. The ultimate objective is to select actions that maximize the return $$G_t$$, which is the discounted sum of rewards over a specific horizon. |
+| **Environment** | -- | The environment constitutes the external system or dynamic "world" with which the agent interacts. It encompasses all physical or logical constraints, transition dynamics, and reward mechanisms outside the agent's direct control. Upon receiving an action, the environment transitions to a new state and emits a corresponding feedback signal. |
 |  **State** | $$s_t \in \mathcal{S}$$ | Comprehensive representation of the environment's configuration at a specific time step $$t$$. If the environment is only partially observable, the agent receives an observation $$o_t$$ of the underlying state $$s_t$$. The state serves as the information basis for the agent's decision-making process. |
 | **Action** | $$a_t \in \mathcal{A}(s)$$ | Discrete or continuous maneuvers available to the agent at any given state. The selection of an action is governed by the agent’s policy $$\pi$$. The action results in the transition to state $$s_{t+1}$$ and the receipt of reward $$r_{t+1}$$. |
-| **Environment** | -- | The environment constitutes the external system or dynamic "world" with which the agent interacts. It encompasses all physical or logical constraints, transition dynamics, and reward mechanisms outside the agent's direct control. Upon receiving an action, the environment transitions to a new state and emits a corresponding feedback signal. |
 | **Reward** | $$R_t$$ | Scalar feedback signal provided by the environment to quantify the immediate success of an action. |
 | **Return** | $$G_t$$ | Discounted sum of all future rewards for a given trajectory:<br><br>$$G_t = R_{t+1} + \gamma R_{t+2} + \gamma^2 R_{t+3} + \dots = \sum_{k=0}^{\infty} \gamma^k R_{t+k+1} = R_{t+1} + \gamma G_{t+1}$$<br><br>where $$\gamma \in (0, 1]$$ is the discount factor. |
-| **Policy** | $$\pi(a \mid s)$$ | Agent's strategy for mapping states to actions. Formally, it defines the probability distribution of taking action $$a$$ given state $$s$$:<br><br>$$\pi(a \mid s) := P(a_t = a \mid s_t = s)$$. |
+| **Policy** | $$\pi(a \mid s)$$ | Agent's strategy for mapping states to actions. Formally, it defines the probability distribution of taking action $$a$$ given state $$s$$:<br><br>$$\pi(a \mid s) := P(a_t = a \mid s_t = s)$$<br><br>If the policy is deterministic instead of stochastic, then $$\pi(s)=a$$. |
 
 ## Bellman expectation equation
 
@@ -33,11 +33,30 @@ $$V^\pi(s) = \sum_{a \in \mathcal{A}} \Bigg( \pi(a|s) \sum_{s' \in \mathcal{S}, 
 - $$\mathcal{S} : $$ Set of all possible states.
 - $$r : $$ Reward.
 - $$\mathcal{R} : $$ Set of all possible rewards.
-- $$P(s', r \mid s, a) : $$ Probability to transition from state $$s'$$ with reward $$r$$ from state $$s$$ with action $$a$$.
+- $$P(s', r \mid s, a) : $$ Probability for the environment to transition from state $$s'$$ with reward $$r$$ from state $$s$$ with action $$a$$.
 - $$\gamma : $$ Discount factor.
 
 ## Bellman optimality equation
 
 The Bellman optimality equation is used to calculate the maximum possible value of a state under the optimal policy.
 
-$$V^\ast(s) = \max_{a \in \mathcal{A}} \sum_{s', r} p(s', r \mid s, a) \Big(r + \gamma V^\ast(s')\Big)$$
+$$V^\ast(s) = \max_{a \in \mathcal{A}} \sum_{s' \in \mathcal{S}, r \in \mathcal{R}} p(s', r \mid s, a) \Big(r + \gamma V^\ast(s')\Big)$$
+
+## Optimal policy
+
+The optimal policy $$\pi^\ast$$ is the strategy that achieves the optimal value function $$V^\ast$$.
+
+$$\displaystyle \pi^\ast(s) = \arg\max_{a \in \mathcal{A}} \sum_{s' \in \mathcal{S}, r \in \mathcal{R}} p(s', r \mid s, a) \Big(r + \gamma V^\ast(s')\Big)$$
+
+> [!NOTE]
+> There may be multiple optimal policies if different actions lead to the same maximum reward.
+
+## Regret
+
+Regret is a metric that quantifies the cumulative expected difference between the actual reward $$r_t$$ earned by an agent using its own policy and the maximal reward $$r_t^\ast$$ that could have been earned by following the optimal policy.
+
+$$\text{Regret}(T) = \mathbb{E} \left[ \sum_{t=1}^{T} r_t^\ast - r_t \right]$$
+
+> [!NOTE]
+> Regret is useful to measure the performance loss caused by the exploration-exploitation tradeoff.
+
