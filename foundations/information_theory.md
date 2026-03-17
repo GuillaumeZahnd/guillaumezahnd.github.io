@@ -40,12 +40,12 @@ $$\begin{align}
 
 ## Kullback-Leibler divergence
 
-The Kullback-Leibler (KL) divergence (also known as relative entropy), measures how one much an estimated probability distribution $$Q$$ differs from the true probability distribution $$P$$. 
+The Kullback-Leibler (KL) divergence (also known as *relative entropy*), measures how one much an estimated probability distribution $$Q$$ differs from the true probability distribution $$P$$. 
 
-The KL divergence $$D_{KL}(P \parallel Q)\geq0$$ between two discrete probability distributions $$P$$ and $$Q$$ is defined as:
+The KL divergence $$D_{KL}(P \mid Q)\geq0$$ between two discrete probability distributions $$P$$ and $$Q$$ is defined as:
 
 $$\begin{align}
-\displaystyle D_{KL}(P \parallel Q) &= \sum_{x \in \mathcal{X}} P(x) \log \left( \frac{P(x)}{Q(x)} \right) \\\\[6pt]
+\displaystyle D_{KL}(P \mid Q) &= \sum_{x \in \mathcal{X}} P(x) \log \left( \frac{P(x)}{Q(x)} \right) \\\\[6pt]
 &= H(P, Q) - H(P)
 \end{align}$$
 
@@ -56,7 +56,10 @@ $$\begin{align}
 - $$\mathcal{X} : $$ Set of all possible outcomes.
 - $$b : $$ Logarithm base (in base 2, the entropy is expressed in bits).
 
-### Key properties
-
 > [!NOTE]
->- The KL divergence corresponds to the "extra bits" that are wasted by using $$Q$$ instead of $$P$$.
+>- **Information theory:** The KL divergence corresponds to the "extra bits" that are wasted to encode samples from $$P$$ using a code optimized for $$Q$$ instead of the true distribution $$P$$.
+>- **Bayesian inference:** The KL divergenve represents the information gain (or surprise) achieved when updating beliefs from a prior distribution $$Q$$ to a posterior distribution $$P$$ after observing data.
+>- **Asymmetry:** $$D_{KL}(P \mid Q) \neq D_{KL}(Q \mid P)$$. Because the KL divergence 
+violates the symmetry and triangle inequality axioms, it is a *divergence* and not a *distance* or *metric*.
+>- **Non-negativity:** $$D_{KL}(P \mid Q) \geq 0$$. The KL divergence equals zero if and only if $$P = Q$$. 
+

@@ -9,9 +9,18 @@ has_children: false
 
 # Calculus
 
+## Gradient
+
+Given a scalar-valued function $$f:\mathbb{R}^n \rightarrow \mathbb{R}$$, the gradient $$\nabla_\mathbf{x} f(\mathbf{x})$$ is defined as:
+
+$$\nabla_\mathbf{x} f(\mathbf{x}) = \frac{\partial f}{\partial \mathbf{x}}$$
+
+> [!NOTE]
+>- The gradient of a function $$f$$ with respect to a vector $$\mathbf{x} \in \mathbb{R}^n$$ is the vector of its partial derivatives, representing the direction of steepest ascent and the magnitude of that rate of change at a given point.
+
 ## Jacobian
 
-Given a vector-valued function $$\mathbf{f} : \mathbb{K}^n \rightarrow \mathbb{K}^m$$, the Jacobian is the $$m \times n$$ matrix $$J$$ that captures how every component of the output $$(f_1​,f_2, \cdots,f_m​)$$ changes with respect to every component of the input $$(x_1​, x_2, \cdots,x_n​)$$.
+Given a vector-valued function $$\mathbf{f} : \mathbb{R}^n \rightarrow \mathbb{R}^m$$, the Jacobian is the $$m \times n$$ matrix $$J$$ that captures how every component of the output $$(f_1​,f_2, \cdots,f_m​)$$ changes with respect to every component of the input $$(x_1​, x_2, \cdots,x_n​)$$.
 
 $$\mathbf{x} = \begin{bmatrix} 
 x_1 \\ 
@@ -72,6 +81,9 @@ $$(g \circ f)'(x) = g'(f(x)) \cdot f'(x)$$
 ### Matrix notation
 
 $$J_{g \circ f} = J_g \cdot J_f$$
+
+> [!IMPORTANT]
+>- The single-variable chain rule applies under the condition that there is a single path of dependency from $$x$$ to $$y$$ (e.g., $$x \rightarrow u \rightarrow y$$). In other words, changes in the input $$x$$ can influence the output $$y$$ in only one way, none of the intermediate subexpression functions (e.g., $$u(x)$$ and $$y(u)$$) have more than one parameter.
 
 ## Taylor series
 
