@@ -57,9 +57,9 @@ $$\begin{align}
 - $$b : $$ Logarithm base (in base 2, the entropy is expressed in bits).
 
 > [!NOTE]
->- **Information theory:** The KL divergence corresponds to the "extra bits" that are wasted to encode samples from $$P$$ using a code optimized for $$Q$$ instead of the true distribution $$P$$.
->- **Bayesian inference:** The KL divergenve represents the information gain (or surprise) achieved when updating beliefs from a prior distribution $$Q$$ to a posterior distribution $$P$$ after observing data.
->- **Asymmetry:** $$D_{KL}(P \mid Q) \neq D_{KL}(Q \mid P)$$. Because the KL divergence 
+> - **Information theory:** The KL divergence corresponds to the "extra bits" that are wasted to encode samples from $$P$$ using a code optimized for $$Q$$ instead of the true distribution $$P$$.
+> - **Bayesian inference:** The KL divergenve represents the information gain (or surprise) achieved when updating beliefs from a prior distribution $$Q$$ to a posterior distribution $$P$$ after observing data.
+> - **Asymmetry:** $$D_{KL}(P \mid Q) \neq D_{KL}(Q \mid P)$$. Because the KL divergence 
 violates the symmetry and triangle inequality axioms, it is a *divergence* and not a *distance* or *metric*.
->- **Non-negativity:** $$D_{KL}(P \mid Q) \geq 0$$. The KL divergence equals zero if and only if $$P = Q$$. 
+> - **Non-negativity:** $$D_{KL}(P \mid Q) \geq 0$$. The KL divergence equals zero if and only if $$P = Q$$. 
 

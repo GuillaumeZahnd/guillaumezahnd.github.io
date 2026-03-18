@@ -16,7 +16,7 @@ Given a scalar-valued function $$f:\mathbb{R}^n \rightarrow \mathbb{R}$$, the gr
 $$\nabla_\mathbf{x} f(\mathbf{x}) = \frac{\partial f}{\partial \mathbf{x}}$$
 
 > [!NOTE]
->- The gradient of a function $$f$$ with respect to a vector $$\mathbf{x} \in \mathbb{R}^n$$ is the vector of its partial derivatives, representing the direction of steepest ascent and the magnitude of that rate of change at a given point.
+> - The gradient of a function $$f$$ with respect to a vector $$\mathbf{x} \in \mathbb{R}^n$$ is the vector of its partial derivatives, representing the direction of steepest ascent and the magnitude of that rate of change at a given point.
 
 ## Jacobian
 
@@ -83,7 +83,7 @@ $$(g \circ f)'(x) = g'(f(x)) \cdot f'(x)$$
 $$J_{g \circ f} = J_g \cdot J_f$$
 
 > [!IMPORTANT]
->- The single-variable chain rule applies under the condition that there is a single path of dependency from $$x$$ to $$y$$ (e.g., $$x \rightarrow u \rightarrow y$$). In other words, changes in the input $$x$$ can influence the output $$y$$ in only one way, none of the intermediate subexpression functions (e.g., $$u(x)$$ and $$y(u)$$) have more than one parameter.
+> - The single-variable chain rule applies under the condition that there is a single path of dependency from $$x$$ to $$y$$ (e.g., $$x \rightarrow u \rightarrow y$$). In other words, changes in the input $$x$$ can influence the output $$y$$ in only one way, none of the intermediate subexpression functions (e.g., $$u(x)$$ and $$y(u)$$) have more than one parameter.
 
 ## Taylor series
 
