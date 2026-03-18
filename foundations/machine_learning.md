@@ -81,7 +81,7 @@ $$J(w) = \sum_{i=1}^{n} (y_i - \hat{y}_i)^2 + \lambda \sum_{j=1}^{m} w_j^2$$
 
 ## Manifold
 
-A manifold is a topological space that locally resembles a Euclidean space (that is, every point has a neighborhood that is homeomorphic to an open subset of $$\mathcal{R}^n$$), even if its global structure is much more complex.
+A manifold is a topological space that locally resembles a Euclidean space (that is, every point has a neighborhood that is homeomorphic to an open subset of $$\mathbb{R}^n$$), even if its global structure is much more complex.
 
 > [!NOTE]
 > - A manifold is the formal way of describing shapes that are "locally flat." For instance, taking the perspective of an ant walking on the surface of a balloon, the world looks like a flat 2D plane, even though the balloon is actually a 3D sphere.
