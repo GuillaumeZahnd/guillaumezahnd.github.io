@@ -45,7 +45,7 @@ $$tr(A) := \sum_{i=1}^n a_{ii}$$
 Let $$A$$ be a square matrix $$A$$ of size $$n \times n$$, and let $$T:\mathbb{R}^n \rightarrow \mathbb{R}^n$$ be the transformation $$T(x) = Ax$$. The following statements are equivalent:
 
 - **Singularity:** $$A$$ is non-singular.
-- **Pivots:** $$A$$ has $$n$$ pivots.
+- **Pivots:** $$A$$ has $$n$$ pivots, that is, every column has a leading $$1$$ when reduced to *row echelon form* via Gaussian elimination.
 - **Invertibility:** $$A$$ is invertible, that is, there exist a matrix $$B$$ such that $$AB = BA = I$$.
 - **Invertibility:** $$T$$ is invertible, that is, $$T^{-1}$$ exists.
 - **Bijectivity:** $$T$$ is bijective, that is, both injective (one-to-one) and surjective (onto).
