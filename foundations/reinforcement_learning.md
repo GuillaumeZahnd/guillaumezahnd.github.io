@@ -48,7 +48,9 @@ The optimal policy $$\pi^\ast$$ is the strategy that achieves the optimal value 
 
 $$\displaystyle \pi^\ast(s) = \arg\max_{a \in \mathcal{A}} \sum_{s' \in \mathcal{S}, r \in \mathcal{R}} p(s', r \mid s, a) \Big(r + \gamma V^\ast(s')\Big)$$
 
-> [!NOTE]
+{: .note-title }
+> Note
+>
 > - There may be multiple optimal policies if different actions lead to the same maximum reward.
 
 ## Regret
@@ -57,6 +59,8 @@ Regret is a metric that quantifies the cumulative expected difference between th
 
 $$\text{Regret}(T) = \mathbb{E} \left[ \sum_{t=1}^{T} r_t^\ast - r_t \right]$$
 
-> [!NOTE]
+{: .note-title }
+> Note
+>
 > - Regret is useful to measure the performance loss caused by the exploration-exploitation tradeoff.
 

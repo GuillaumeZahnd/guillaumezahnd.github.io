@@ -56,7 +56,9 @@ $$\begin{align}
 - $$\mathcal{X} : $$ Set of all possible outcomes.
 - $$b : $$ Logarithm base (in base 2, the entropy is expressed in bits).
 
-> [!NOTE]
+{: .note-title }
+> Note
+>
 > - **Information theory:** The KL divergence corresponds to the "extra bits" that are wasted to encode samples from $$P$$ using a code optimized for $$Q$$ instead of the true distribution $$P$$.
 > - **Bayesian inference:** The KL divergenve represents the information gain (or surprise) achieved when updating beliefs from a prior distribution $$Q$$ to a posterior distribution $$P$$ after observing data.
 > - **Asymmetry:** $$D_{KL}(P \mid Q) \neq D_{KL}(Q \mid P)$$. Because the KL divergence 

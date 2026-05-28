@@ -43,10 +43,14 @@ $$\begin{align}
 &= \sigma(\mathbf{x})_i
 \end{align}$$
 
-> [!NOTE]
+{: .note-title }
+> Note
+>
 > - Overflow is fully prevented: all values are constrained between $$0$$ and $$1$$, the numerator is always $$\leq 1$$ and the denominator is always $$\geq 1$$, therefore the result cannot be $$\infty$$.
 
-> [!WARNING]
+{: .warning-title }
+> Warning
+>
 > - Underflow is partially handled: the denominator is always $$\geq 1$$ (avoiding division-by-zero), but the numerator can still underflow to $$0$$ if it is much smaller than the maximum value.
 
 ## Log-Sum-Exp trick
@@ -83,7 +87,9 @@ $$J(w) = \sum_{i=1}^{n} (y_i - \hat{y}_i)^2 + \lambda \sum_{j=1}^{m} w_j^2$$
 
 A manifold is a topological space that locally resembles a Euclidean space (that is, every point has a neighborhood that is homeomorphic to an open subset of $$\mathbb{R}^n$$), even if its global structure is much more complex.
 
-> [!NOTE]
+{: .note-title }
+> Note
+>
 > - A manifold is the formal way of describing shapes that are "locally flat." For instance, taking the perspective of an ant walking on the surface of a balloon, the world looks like a flat 2D plane, even though the balloon is actually a 3D sphere.
 > - Other examples of manifolds include a circle, which locally resembles a line, and the surface of a $$n$$-sphere, which locally resembles a $$n-1$$ hyperplane.
 > - Manifold is a critical assumption in Machine Learning to handle high dimensional data. Many datasets lie near a lower-dimensional manifold embedded in a high-dimensional space, meaning the intrinsic structure of the data has fewer degrees of freedom than the ambient dimension.
