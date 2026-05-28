@@ -1,0 +1,71 @@
+// ── Callout base ────────────────────────────────────────────
+%callout-base {
+  border-radius: 4px;
+  border-left-width: 4px;
+  border-left-style: solid;
+  padding: 0.8rem 1rem;
+  margin: 1rem 0;
+  > p:first-child { margin-top: 0; }
+  > p:last-child  { margin-bottom: 0; }
+}
+
+// ── Title line styling ───────────────────────────────────────
+%callout-title-line {
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+// ── Note (blue) ──────────────────────────────────────────────
+.note, .note-title {
+  @extend %callout-base;
+  background: #dbeafe;
+  border-color: #3b82f6;
+}
+.note-title > p:first-child {
+  @extend %callout-title-line;
+  color: #1d4ed8;
+}
+
+// ── Tip (green) ──────────────────────────────────────────────
+.tip, .tip-title {
+  @extend %callout-base;
+  background: #dcfce7;
+  border-color: #22c55e;
+}
+.tip-title > p:first-child {
+  @extend %callout-title-line;
+  color: #15803d;
+}
+
+// ── Warning (yellow) ─────────────────────────────────────────
+.warning, .warning-title {
+  @extend %callout-base;
+  background: #fef9c3;
+  border-color: #eab308;
+}
+.warning-title > p:first-child {
+  @extend %callout-title-line;
+  color: #854d0e;
+}
+
+// ── Important (purple) ───────────────────────────────────────
+.important, .important-title {
+  @extend %callout-base;
+  background: #f3e8ff;
+  border-color: #a855f7;
+}
+.important-title > p:first-child {
+  @extend %callout-title-line;
+  color: #7e22ce;
+}
+
+// ── Caution (red) ────────────────────────────────────────────
+.caution, .caution-title {
+  @extend %callout-base;
+  background: #fee2e2;
+  border-color: #ef4444;
+}
+.caution-title > p:first-child {
+  @extend %callout-title-line;
+  color: #b91c1c;
+}
