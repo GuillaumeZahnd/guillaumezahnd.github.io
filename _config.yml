@@ -11,5 +11,6 @@ kramdown:
 
 plugins:
   - jekyll-remote-theme
+  - jekyll-github-metadata
   
 custom_css: assets/css/custom.css  
