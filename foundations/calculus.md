@@ -87,11 +87,11 @@ $$J_{g \circ f} = J_g \cdot J_f$$
 {: .tip-title }
 > Tip
 >
-> To train a Machine Learning model, we update the parameters of the neural network by calculating the gradient of the final output of the network (the scalar loss $L$) with respect the the weights $W_i$. For a neural network with a sequence of hidden layer activations $\mathbf{h}_1, \mathbf{h}_2, \dots, \mathbf{h}_n$, the gradient with respect to the weights of an arbitrary internal layer $i$ is expressed by:
+> To train a Machine Learning model, we update the parameters of the neural network by calculating the gradient of the final output of the network (the scalar loss $$L$$) with respect the the weights $$W_i$$. For a network with a sequence of hidden layer activations $$\mathbf{h}_1, \mathbf{h}_2, \dots, \mathbf{h}_n$$, the gradient with respect to the weights of an arbitrary internal layer $$i$$ is expressed by:
 >
-> $\displaystyle \frac{\partial L}{\partial W_i} = \frac{\partial L}{\partial \mathbf{h}_n} \cdot \frac{\partial \mathbf{h}_n}{\partial \mathbf{h}_{n-1}} \cdot \dots \cdot \frac{\partial \mathbf{h}_{i+1}}{\partial \mathbf{h}_i} \cdot \frac{\partial \mathbf{h}_i}{\partial W_i}$
+> $$\displaystyle \frac{\partial L}{\partial W_i} = \frac{\partial L}{\partial \mathbf{h}_n} \cdot \frac{\partial \mathbf{h}_n}{\partial \mathbf{h}_{n-1}} \cdot \dots \cdot \frac{\partial \mathbf{h}_{i+1}}{\partial \mathbf{h}_i} \cdot \frac{\partial \mathbf{h}_i}{\partial W_i}$$
 >
-> Each term $\displaystyle \frac{\partial \mathbf{h}_j}{\partial \mathbf{h}_{j-1}}$ represents the Jacobian matrix of a specific layer, which describes how the activations of that layer change in response to the activations of the previous layer.
+> Each term $$\displaystyle \frac{\partial \mathbf{h}_j}{\partial \mathbf{h}_{j-1}}$$ represents the Jacobian matrix of a specific layer, which describes how the activations of that layer change in response to the activations of the previous layer.
 
 {: .important-title }
 > Important
@@ -102,4 +102,4 @@ $$J_{g \circ f} = J_g \cdot J_f$$
 
 A function $$f$$ can be approximated to order $$n$$ around $$x=a$$ using the $$n$$-th degree Taylor polynomial $$P_n​(x)$$:
 
-$$f(x) \approx P_n​(x) = \sum_{k=0}^{n} \frac{f^{(k)}(a)}{k!} (x-a)^k$
+$$f(x) \approx P_n​(x) = \sum_{k=0}^{n} \frac{f^{(k)}(a)}{k!} (x-a)^k$$

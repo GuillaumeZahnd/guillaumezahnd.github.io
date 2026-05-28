@@ -46,12 +46,12 @@ $$\begin{align}
 {: .note-title }
 > Note
 >
-> - Overflow is fully prevented: all values are constrained between $$0$$ and $$1$$, the numerator is always $$\leq 1$$ and the denominator is always $$\geq 1$$, therefore the result cannot be $$\infty$$.
+> Overflow is fully prevented: all values are constrained between $$0$$ and $$1$$, the numerator is always $$\leq 1$$ and the denominator is always $$\geq 1$$, therefore the result cannot be $$\infty$$.
 
 {: .warning-title }
 > Warning
 >
-> - Underflow is partially handled: the denominator is always $$\geq 1$$ (avoiding division-by-zero), but the numerator can still underflow to $$0$$ if it is much smaller than the maximum value.
+> Underflow is partially handled: the denominator is always $$\geq 1$$ (avoiding division-by-zero), but the numerator can still underflow to $$0$$ if it is much smaller than the maximum value.
 
 ## Log-Sum-Exp trick
 
