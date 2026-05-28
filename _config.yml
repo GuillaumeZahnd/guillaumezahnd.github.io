@@ -5,7 +5,7 @@ baseurl: ""
 
 remote_theme: just-the-docs/just-the-docs
 
-markdown: GFM
+markdown: kramdown
 kramdown:
   math_engine: mathjax
 
@@ -14,3 +14,21 @@ plugins:
   - jekyll-github-metadata
   
 custom_css: assets/css/custom.css  
+
+callouts_level: quiet
+callouts:
+  note:
+      title: Note
+      color: blue
+  tip:
+      title: Tip
+      color: green
+  warning:
+      title: Warning
+      color: yellow
+  important:
+      title: Important
+      color: purple
+  caution:
+      title: Caution
+      color: red
