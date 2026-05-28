@@ -1,10 +1,9 @@
 ---
 layout: default
 title: Vim
-nav_order: 3
-parent: Foundations
-grand_parent: Home
-has_children: false
+nav_order: 2
+parent: Home
+has_children: true
 ---
 
 # Vim
