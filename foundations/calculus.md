@@ -18,7 +18,7 @@ $$\nabla_\mathbf{x} f(\mathbf{x}) = \frac{\partial f}{\partial \mathbf{x}}$$
 {: .note-title }
 > Note
 >
-> - The gradient of a function $$f$$ with respect to a vector $$\mathbf{x} \in \mathbb{R}^n$$ is the vector of its partial derivatives, representing the direction of steepest ascent and the magnitude of that rate of change at a given point.
+> The gradient of a function $$f$$ with respect to a vector $$\mathbf{x} \in \mathbb{R}^n$$ is the vector of its partial derivatives, representing the direction of steepest ascent and the magnitude of that rate of change at a given point.
 
 ## Jacobian
 
@@ -64,7 +64,7 @@ $$\frac{\partial f_j}{\partial x_i} = \frac{\partial f_j(x_1, x_2, \dots, x_j, \
 | **Product** | $$h(x) = f(x)g(x)$$ | $$h'(x) = f'(x)g(x) + f(x)g'(x)$$|
 | **Quotient** | $$f(x) = \frac{a(x)}{b(x)}$$ | $$f'(x) = \frac{a'(x)b(x) - a(x)b'(x)}{b(x)^2}$$ |
 | **Sigmoid** | $$S(x) = \frac{1}{1 + e^{-x}}$$ | $$S'(x) = S(x) \cdot \Big(1 - S(x)\Big)$$ |
-| **Softmax** | $$\sigma(\mathbf{z})\_i = \frac{e^{z_i}}{\sum_{k=1}^{K} e^{z_k}}$$ | Case 1, $$i=j$$ (diagonal):<br><br>$$\frac{\partial \sigma(z)_i}{\partial z_i} = \sigma(z)_i\Big(1 - \sigma(z)_i\Big)$$<br><br>Case 2, $$i \neq j$$ (off-diagonal):<br><br>$$\frac{\partial \sigma(z)_i}{\partial z_j} = -\sigma(z)_i \sigma(z)_j$$ |
+| **Softmax** | $$\sigma(\mathbf{z})_i = \frac{e^{z_i}}{\sum_{k=1}^{K} e^{z_k}}$$ | Case 1, $$i=j$$ (diagonal):<br><br>$$\frac{\partial \sigma(z)_i}{\partial z_i} = \sigma(z)_i\Big(1 - \sigma(z)_i\Big)$$<br><br>Case 2, $$i \neq j$$ (off-diagonal):<br><br>$$\frac{\partial \sigma(z)_i}{\partial z_j} = -\sigma(z)_i \sigma(z)_j$$ |
 
 ## Single-variable chain rule
 
@@ -84,13 +84,22 @@ $$(g \circ f)'(x) = g'(f(x)) \cdot f'(x)$$
 
 $$J_{g \circ f} = J_g \cdot J_f$$
 
+{: .tip-title }
+> Tip
+>
+> To train a Machine Learning model, we update the parameters of the neural network by calculating the gradient of the final output of the network (the scalar loss $L$) with respect the the weights $W_i$. For a neural network with a sequence of hidden layer activations $\mathbf{h}_1, \mathbf{h}_2, \dots, \mathbf{h}_n$, the gradient with respect to the weights of an arbitrary internal layer $i$ is expressed by:
+>
+> $\displaystyle \frac{\partial L}{\partial W_i} = \frac{\partial L}{\partial \mathbf{h}_n} \cdot \frac{\partial \mathbf{h}_n}{\partial \mathbf{h}_{n-1}} \cdot \dots \cdot \frac{\partial \mathbf{h}_{i+1}}{\partial \mathbf{h}_i} \cdot \frac{\partial \mathbf{h}_i}{\partial W_i}$
+>
+> Each term $\displaystyle \frac{\partial \mathbf{h}_j}{\partial \mathbf{h}_{j-1}}$ represents the Jacobian matrix of a specific layer, which describes how the activations of that layer change in response to the activations of the previous layer.
+
 {: .important-title }
 > Important
 >
-> - The single-variable chain rule applies under the condition that there is a single path of dependency from $$x$$ to $$y$$ (e.g., $$x \rightarrow u \rightarrow y$$). In other words, changes in the input $$x$$ can influence the output $$y$$ in only one way, none of the intermediate subexpression functions (e.g., $$u(x)$$ and $$y(u)$$) have more than one parameter.
+> The single-variable chain rule applies under the condition that there is a single path of dependency from $$x$$ to $$y$$ (e.g., $$x \rightarrow u \rightarrow y$$). In other words, changes in the input $$x$$ can influence the output $$y$$ in only one way, none of the intermediate subexpression functions (e.g., $$u(x)$$ and $$y(u)$$) have more than one parameter.
 
 ## Taylor series
 
 A function $$f$$ can be approximated to order $$n$$ around $$x=a$$ using the $$n$$-th degree Taylor polynomial $$P_n​(x)$$:
 
-$$f(x) \approx P_n​(x) = \sum_{k=0}^{n} \frac{f^{(k)}(a)}{k!} (x-a)^k$$
+$$f(x) \approx P_n​(x) = \sum_{k=0}^{n} \frac{f^{(k)}(a)}{k!} (x-a)^k$
