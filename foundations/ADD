@@ -1,0 +1,7 @@
+PCA is a widely used method for linear dimensionality reduction. PCA operates by finding a new orthogonal basis that captures directions of maximal variance in the data
+[9]
+. By projecting high-dimensional vectors onto these principal axes, PCA allows one to rank-order components by their explanatory power. 
+
+On the other hand, Uniform Manifold Approximation and Projection (UMAP), proposed by McInnes et al. in 2018
+[10]
+, provides a nonlinear alternative designed to preserve both local neighborhoods and some aspects of global manifold structure. Rather than identifying variance-maximizing axes, UMAP builds a graph-based representation of data as a topological manifold and then optimizes a low-dimensional embedding that preserves this structure. 
