@@ -64,3 +64,27 @@ $$\text{Regret}(T) = \mathbb{E} \left[ \sum_{t=1}^{T} r_t^\ast - r_t \right]$$
 >
 > Regret is useful to measure the performance loss caused by the exploration-exploitation tradeoff.
 
+## Model-based vs. model-free learning
+
+### Model-based learning
+
+The agent first learns a model of the environment that predicts state transitions and rewards, then uses this model to plan future actions via simulation before executing them.
+
+The model is learned by collecting real-world transition data (tuples of the current state, action taken, next state, and reward) as the agent interacts with the environment. This data is then used to train supervised learning algorithms (e.g., neural networks or transition tables) that map state-action pairs to their predicted next states and rewards.
+
+$$\mathcal{M}(s, a) = \Big( P(s' \mid s, a), \, R(s, a) \Big)$$
+
+### Model-free learning
+
+The agent learns directly from trial-and-error experience, updating its value functions or policies based on observed transitions.
+
+### Comparison
+
+| | Model-based RL | Model-free RL |
+| :--- | :--- | :--- |
+|**Examples**| Chess Autonomous vehicle trajectory planning, Industrial chemical process control | Maze navigation, Atari video games, Quadrupedal locomotion over rough terrain |
+| **Core mechanism** | Learn model $\rightarrow$ Plan $\rightarrow$ Act | Act $\rightarrow$ Learn from experience |
+| **Sample efficiency** | High (requires few real-world interactions) | Low (requires extensive trial-and-error) |
+| **Computational overhead** | High (intensive simulation) | Low (direct value/policy updates) |
+| **Robustness** | Moderate, can be vulnerable to modeling errors | High, capable to handle to highly complex, non-linear, or stochastic dynamics that are difficult to model accurately |
+| **Primary Risk** | Asymptotic suboptimality due to model bias, potentially leading to high compounding errors | High variance and poor performance in early exploration |
