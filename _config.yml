@@ -32,8 +32,3 @@ callouts:
   caution:
       title: Caution
       color: red
-      
-/* Remove horizontal scrollbar on tables */
-.table-wrapper {
-  overflow-x: visible;
-}      

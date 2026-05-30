@@ -9,3 +9,9 @@ mjx-container {
 mjx-container[display="true"] {
   margin: 1.5em 0 !important;
 }
+
+      
+/* Remove horizontal scrollbar on tables */
+.table-wrapper {
+  overflow-x: visible;
+}      
