@@ -8,7 +8,13 @@ has_children: true
 
 # Vim
 
-## General
+## Config file
+
+[`.vimrc`](https://github.com/GuillaumeZahnd/linusque/blob/master/dot_vimrc)
+
+## Commands
+
+### General
 
 | Command | Effect |
 | --- | --- |
@@ -22,7 +28,7 @@ has_children: true
 | 0D | Delete entire line (except linebreak) |
 
 
-## Buffer
+### Buffer
 
 | Command | Effect |
 | --- | --- |
@@ -36,4 +42,3 @@ has_children: true
 | :bd <filename> | Delete \<filename> from buffer |
 | :mksession! ~/\<session name>.ses | Save current session |
 | vim -S ~/\<session name>.ses | Load session |
-
