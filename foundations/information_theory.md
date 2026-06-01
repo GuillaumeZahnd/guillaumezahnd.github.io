@@ -83,7 +83,7 @@ For complex high-dimensional models, this integral is intractable.
 
 ### Paradigm change and Jensen's inequality
 
-Instead of asking *"how do I compute* $$log p(x)$$*?"*, ELBO asks *"can I find a lower bound that's easy to optimize?"*. The key insight is to introduce an auxiliary distribution $$q(z|x)$$.
+Instead of asking *"how do I compute* $$\log p(x)$$*?"*, ELBO asks *"can I find a lower bound that's easy to optimize?"*. The key insight is to introduce an auxiliary distribution $$q(z \mid x)$$.
 
 $$\begin{aligned}
 \log p(x) 
@@ -93,10 +93,9 @@ $$\begin{aligned}
 &\geq \mathbb{E}_{q(z|x)} \left[ \log \frac{p(x, z)}{q(z|x)} \right] \quad \text{(Jensen's Inequality, since log is concave, $\log \mathbb{E}[\cdot] \geq \mathbb{E}[\log \cdot]$)} \\
 \end{aligned}$$
 
-{: .note-title }
-> Note
+{: .important-title }
+> Important
 >
-> The ELBO is defined as
 > $$\text{ELBO} := \mathbb{E}_{q(z|x)} \left[ \log \frac{p(x, z)}{q(z|x)} \right]$$
 
 ### Relationship with the KL divergence
@@ -115,4 +114,4 @@ D_{\mathrm{KL}}\left(q(z|x) \| p(z|x)\right)
 >
 > $$\log p(x) = \text{ELBO} + D_{\mathrm{KL}}\left(q(z|x) \| p(z|x)\right)$$
 >
-> Since $$D_{\mathrm{KL}} \geq 0$$ the ELBO is a tractable lower bound on the true log-evidence $$\log p(x)$$. Therefore, maximizing the ELBO simultaneously tightens the lower bound and pushes our approximation $$q(z \mid x)$$ toward the true posterior $$p(z \mid x)$$, without ever needing to compute the latter directly.
+> Since $$D_{\mathrm{KL}} \geq 0$$, the ELBO is a tractable lower bound on the true log-evidence $$\log p(x)$$. Therefore, maximizing the ELBO simultaneously tightens the lower bound and pushes our approximation $$q(z \mid x)$$ toward the true posterior $$p(z \mid x)$$, without ever needing to compute the latter directly.
