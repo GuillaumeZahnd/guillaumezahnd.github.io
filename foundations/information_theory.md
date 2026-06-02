@@ -89,8 +89,8 @@ $$\begin{aligned}
 \log p(x) 
 &= \log \int p(x, z) dz \\
 &= \log \int q(z|x) \frac{p(x, z)}{q(z|x)} dz \\
-&= \log \mathbb{E}_{q(z|x)} \left[ \frac{p(x, z)}{q(z|x)} \right]  \quad \text{(Expectation under~} q \text{)}\\
-&\geq \mathbb{E}_{q(z|x)} \left[ \log \frac{p(x, z)}{q(z|x)} \right] \quad \text{(Jensen's Inequality, since log is concave, $\log \mathbb{E}[\cdot] \geq \mathbb{E}[\log \cdot]$)} \\
+&= \log \mathbb{E}_{q(z|x)} \left[ \frac{p(x, z)}{q(z|x)} \right]  \quad \text{(Expectation under}~q \text{)}\\
+&\geq \mathbb{E}_{q(z|x)} \left[ \log \frac{p(x, z)}{q(z|x)} \right] \quad \text{(Jensen's inequality, since log is concave, $\log \mathbb{E}[\cdot] \geq \mathbb{E}[\log \cdot]$)} \\
 \end{aligned}$$
 
 {: .important-title }

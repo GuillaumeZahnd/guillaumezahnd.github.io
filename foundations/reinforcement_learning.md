@@ -123,7 +123,7 @@ In off-policy algorithms, the target policy and the behavior policy are distinct
 | | On-policy learning | Off-policy learning |
 | :--- | :--- | :--- |
 | **Primary application** | Online real-world systems: Physical robotics or critical machinery where exploration steps must be safe and account for real-time risk | Simulators & legacy datasets: Autonomous driving fleets or recommendation engines that must learn from human logs or historical data |
-| **Policy relationship** | Target policy equals behavior policy ($$\pi = \mu$$) | Target policy differs from behavior policy ($$\pi \neq \mu$$) |
+| **Policy relationship** | Target policy equals behavior policy $$(\pi = \mu)$$ | Target policy differs from behavior policy $$(\pi \neq \mu)$$ |
 | **Core objective** | Optimize the value of the *current* exploratory policy, forcing the experience to reflect the current strategy | Optimize the value of the *target* (usually optimal) policy, regardless of how the agent is currently exploring |
 | **Data efficiency** | Low: Data must be discarded after a policy update | High: Can reuse historical data via a replay buffer, parallel runs, human input |
 | **Exploration risk** | Low: Avoids high-risk states by accounting for exploratory randomness | High: Maximizes theoretical returns, aims for optimal performance, but ignores the cost of real-world exploration and prone to catastrophic failures |

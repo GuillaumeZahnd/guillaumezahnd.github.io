@@ -93,3 +93,23 @@ A manifold is a topological space that locally resembles a Euclidean space (that
 > - A manifold is the formal way of describing shapes that are "locally flat." For instance, taking the perspective of an ant walking on the surface of a balloon, the world looks like a flat 2D plane, even though the balloon is actually a 3D sphere.
 > - Other examples of manifolds include a circle, which locally resembles a line, and the surface of a $$n$$-sphere, which locally resembles a $$n-1$$ hyperplane.
 > - Manifold is a critical assumption in Machine Learning to handle high dimensional data. Many datasets lie near a lower-dimensional manifold embedded in a high-dimensional space, meaning the intrinsic structure of the data has fewer degrees of freedom than the ambient dimension.
+
+## Likelihood and log-likelihood
+
+### Likelihood
+
+The likelihood function $$L(\theta)$$ represents the plausibility of a fixed set of observed data across different variations of the model parameters $$(\theta)$$. The goal of Maximum Likelihood Estimation (MLE) is to find the specific value $$\hat{\theta}$$ that maximizes $$L(\theta)$$.
+
+$$L(\theta) = \prod_{i=1}^{n} P(x_i \mid \theta)$$
+
+### Log-likelihood
+
+The log-likelihood $\ell(\theta)$ is the natural logarithm of the likelihood function. Because the logarithm is a monotonically increasing function, the value $$\hat{\theta}$$ that maximizes the likelihood also maximizes the log-likelihood.
+
+$$\ell(\theta) = \log(L(\theta)) = \sum_{i=1}^{n} \log(P(x_i \mid \theta))$$
+
+### Why use log-likelihood instead of likelihood?
+
+1. **Mathematical simplicity:** The logarithm converts products into sums, which are easier to differentiate.
+2. **Numerical stability:** Probabilities are numbers between 0 and 1. Multiplying thousands of such small values may result in arithmetic underflow. The logarithm turn these values into manageable negative numbers.
+3. **Exponential family:** Several common distributions (Gaussian, Bernoulli, Poisson) contain an exponential term. The logarithm cancels out the exponential, leaving a linear or quadratic expression that is easy to solve.
