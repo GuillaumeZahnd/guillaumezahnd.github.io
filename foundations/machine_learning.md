@@ -104,7 +104,7 @@ $$L(\theta) = \prod_{i=1}^{n} P(x_i \mid \theta)$$
 
 ### Log-likelihood
 
-The log-likelihood $\ell(\theta)$ is the natural logarithm of the likelihood function. Because the logarithm is a monotonically increasing function, the value $$\hat{\theta}$$ that maximizes the likelihood also maximizes the log-likelihood.
+The log-likelihood $$\ell(\theta)$$ is the natural logarithm of the likelihood function. Because the logarithm is a monotonically increasing function, the value $$\hat{\theta}$$ that maximizes the likelihood also maximizes the log-likelihood.
 
 $$\ell(\theta) = \log(L(\theta)) = \sum_{i=1}^{n} \log(P(x_i \mid \theta))$$
 
