@@ -131,12 +131,16 @@ The final update equation scales the step size inversely proportional to the roo
 
 $$\theta_{t+1} = \theta_t - \displaystyle\frac{\eta}{\sqrt{\hat{v}_t} + \epsilon} \hat{m}_t$$
 
-Note: $$\epsilon$$ is a small smoothing term (typically $$10^{-8}$$) to prevent division by zero. Typical default hyperparameters are $$\beta_1 = 0.9$$ and $$\beta_2 = 0.999$$.
+{: .note-title }
+> Note
+>
+> What makes Adam adaptive per-parameter is that $$\hat{v}_t$$ appears in the denominator of the update rule: each weight $$i$$ is updated by an effective learning rate $$\eta_i = \eta / (\sqrt{\hat{v}_t^{(i)}} + \epsilon)$$, scaled by that weight's own gradient history. Weights with large historical gradients take smaller steps; weights with small or sparse gradients take larger ones. The global $$\eta$$ is a ceiling, not a fixed step: it is rescaled differently for every parameter at every step.
 
-### When to use Adam over SGD
-
-- **Deploy Adam when:** You are prototyping a new, unproven architecture, working with sparse data, dealing with complex multimodal loss landscapes (e.g., Transformers, GANs), or have strict constraints on hyperparameter tuning time.
-- **Deploy SGD with Momentum when:** You are optimizing a standard architecture (e.g., ResNets in computer vision) for maximum generalization performance. Adam's aggressive scaling can cause the optimizer to overshoot narrow, robust minima, leading to poorer generalization on the test set compared to a well-tuned SGD routine.
+{: .tip-title }
+> Tip
+>
+>- **Deploy Adam when:** You are prototyping a new, unproven architecture, working with sparse data, dealing with complex multimodal loss landscapes (e.g., Transformers, GANs), or have strict constraints on hyperparameter tuning time.
+>- **Deploy SGD with Momentum when:** You are optimizing a standard architecture (e.g., ResNets in computer vision) for maximum generalization performance. Adam's aggressive scaling can cause the optimizer to overshoot narrow, robust minima, leading to poorer generalization on the test set compared to a well-tuned SGD routine.
 
 ## Manifold
 
