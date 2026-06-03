@@ -83,6 +83,61 @@ $$J(w) = \sum_{i=1}^{n} (y_i - \hat{y}_i)^2 + \lambda \sum_{j=1}^{m} w_j^2$$
 - $$w_j : $$ Model weight for parameter $$j$$.
 - $$m : $$ Number of parameters.
 
+## Optimizers
+
+The fundamental difference between Stochastic Gradient Descent (SGD) and Adam (Adaptive Moment Estimation) lies in how they scale the step size. SGD applies a uniform learning rate to all parameters, whereas Adam calculates distinct, adaptive learning rates for every single weight by tracking historical gradients.
+
+### Notations
+
+- $$\theta_t$$:  Model parameters (weights) at step $$t$$
+- $$g_t = \nabla J(\theta_t)$$: Gradient of the loss function $$J$$ with respect to $$\theta_t$$
+- $$\eta$$: Learning rate
+- $$\gamma$$ or $$\beta$$: Decay coefficients for moving averages
+
+| Metric | SGD | SGD with momentum | Adam |
+| :--- | :--- | :--- | :--- |
+| **Weight update formula** | $$\theta_{t+1} = \theta_t - \eta g_t$$ | $$v_t = \gamma v_{t-1} + g_t$$<br>$$\theta_{t+1} = \theta_t - \eta v_t$$ | $$\theta_{t+1} = \theta_t - \displaystyle\frac{\eta}{\sqrt{\hat{v}_t} + \epsilon} \hat{m}_t$$ |
+| **Learning rate** | Constant for all parameters | Constant scaled by velocity | Adaptive for each parameter |
+| **Convergence** | Slow; prone to oscillation | Accelerated along consistent directions | Fast initial phase, especially in sparse settings |
+| **Local minima** | Easily trapped | Momentum helps navigate saddles and flat regions | Adaptive step scaling helps navigate ravines and ill-conditioned curvature |
+| **Memory** | Low (no auxiliary state, $$O(1)$$) | Medium (stores $$v_t$$, $$O(N)$$ extra memory) | High (stores $$m_t$$ and $$v_t$$, $$O(2N)$$ extra memory) |
+| **Tuning sensitivity** | High (highly sensitive to $$\eta$$) | Medium | Low (default hyperparameters usually robust) |
+
+### Mathematical formulations
+
+#### SGD with Momentum
+
+Momentum addresses the oscillations of standard SGD in ravines by adding a fraction $$\gamma$$ of the previous update vector to the current step:
+
+$$v_t = \gamma v_{t-1} + g_t$$
+
+$$\theta_{t+1} = \theta_t - \eta v_t$$
+
+#### Adam
+
+Adam computes adaptive learning rates by tracking both the exponentially decaying average of past gradients (first moment, $$m_t$$) and exponentially decaying average of past squared gradients (second uncentered moment, $$v_t$$):
+
+$$m_t = \beta_1 m_{t-1} + (1 - \beta_1)g_t$$
+
+$$v_t = \beta_2 v_{t-1} + (1 - \beta_2)g_t^2$$
+
+Because $$m_t$$ and $$v_t$$ are typically initialized as vectors of zeros, they are biased toward zero, especially during the initial time steps. To counteract this, Adam applies bias-corrected estimators:
+
+$$\hat{m}_t = \displaystyle\frac{m_t}{1 - \beta_1^t}$$
+
+$$\hat{v}_t = \displaystyle\frac{v_t}{1 - \beta_2^t}$$
+
+The final update equation scales the step size inversely proportional to the root mean square of past gradients:
+
+$$\theta_{t+1} = \theta_t - \displaystyle\frac{\eta}{\sqrt{\hat{v}_t} + \epsilon} \hat{m}_t$$
+
+Note: $$\epsilon$$ is a small smoothing term (typically $$10^{-8}$$) to prevent division by zero. Typical default hyperparameters are $$\beta_1 = 0.9$$ and $$\beta_2 = 0.999$$.
+
+### When to use Adam over SGD
+
+- **Deploy Adam when:** You are prototyping a new, unproven architecture, working with sparse data, dealing with complex multimodal loss landscapes (e.g., Transformers, GANs), or have strict constraints on hyperparameter tuning time.
+- **Deploy SGD with Momentum when:** You are optimizing a standard architecture (e.g., ResNets in computer vision) for maximum generalization performance. Adam's aggressive scaling can cause the optimizer to overshoot narrow, robust minima, leading to poorer generalization on the test set compared to a well-tuned SGD routine.
+
 ## Manifold
 
 A manifold is a topological space that locally resembles a Euclidean space (that is, every point has a neighborhood that is homeomorphic to an open subset of $$\mathbb{R}^n$$), even if its global structure is much more complex.
@@ -98,7 +153,7 @@ A manifold is a topological space that locally resembles a Euclidean space (that
 
 ### Likelihood
 
-The likelihood function $$L(\theta)$$ represents the plausibility of a fixed set of observed data across different variations of the model parameters $$(\theta)$$. The goal of Maximum Likelihood Estimation (MLE) is to find the specific value $$\hat{\theta}$$ that maximizes $$L(\theta)$$.
+The likelihood function $$L(\theta)$$ represents the plausibility of a fixed set of observed data across different variations of the model parameters $$\theta$$. The goal of Maximum Likelihood Estimation (MLE) is to find the specific value $$\hat{\theta}$$ that maximizes $$L(\theta)$$.
 
 $$L(\theta) = \prod_{i=1}^{n} P(x_i \mid \theta)$$
 
