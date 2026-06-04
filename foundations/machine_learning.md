@@ -29,7 +29,9 @@ $$RMSE = \sqrt{\frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2}$$
 
 $$\sigma(\mathbf{z})_i = \frac{e^{z_i}}{\sum_{j=1}^{n} e^{z_j}}$$
 
-> [!CAUTION]
+{: .caution-title }
+> Caution
+>
 > - Risk of overflow: if $$z_i$$ is large ($$>88$$ in float32), then $$e^{z_i}$$ exceeds the numerical precision and returns $$\infty$$. Both the numerator and denominator would be $$\infty$$, and the softmax function would return `NaN`.
 > - Risk of underflow: if $$z_i$$ is small ($$<-103$$ in float32), then $$e^z_i$$ rounds down to $$0.0$$. If all input are very small, the denominator becomes zero, thereby leading to a division-by-zero. The softmax function would return `NaN`.
 
