@@ -9,6 +9,20 @@ has_children: false
 
 # Statistics
 
+## Z-score
+
+A Z-score measures how far a single data point $$x$$ is from the average $$\mu$$ of the entire dataset, using the dataset's standard deviation $$\sigma$$ as the yardstick.
+
+$$\displaystyle Z = \frac{x - \mu}{\sigma}$$
+
+{: .tip-title }
+> Tip
+>
+> For a normal distribution, the 68-95-99.7 empirical rule dictates how data points cluster around the mean:
+> - ca. $$68\%$$ of all samples satisfy $$-1 \leq Z \leq 1$$
+> - ca. $$95\%$$ of all samples satisfy $$-2 \leq Z \leq 2$$
+> - ca. $$99.7\%$$ of all samples satisfy $$-3 \leq Z \leq 3$$
+
 ## Power analysis
 
 The validity of a statistical test is governed by five interdependent parameters (see Table below). 
