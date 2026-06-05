@@ -8,6 +8,6 @@ has_toc: false
 
 # Guillaume Zahnd
 
-Lorem ipsum dolor sit amet.
+Nerdy bits about AI foundations.
 
-
+Currently in the making: Pieces about game theory, history of science, recreational math, and science-inspired art.
