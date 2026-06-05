@@ -103,3 +103,29 @@ $$J_{g \circ f} = J_g \cdot J_f$$
 A function $$f$$ can be approximated to order $$n$$ around $$x=a$$ using the $$n$$-th degree Taylor polynomial $$P_n​(x)$$:
 
 $$f(x) \approx P_n​(x) = \sum_{k=0}^{n} \frac{f^{(k)}(a)}{k!} (x-a)^k$$
+
+## Convexity
+
+Convexity describes the geometric property of a function where a line segment connecting any two points on its graph never lies below the graph itself. 
+
+Mathematically, a function $f: \mathbb{R}^n \to \mathbb{R}$ is convex if, for all $x, y$ in its domain and any scalar $\lambda \in [0, 1]$:
+
+$$f\left(\lambda x + (1 - \lambda)y\right) \leq \lambda f(x) + (1 - \lambda)f(y)$$
+
+## Hessian
+
+The Hessian matrix ($$H$$ or $$\nabla^2 f$$) captures the second-order behavior (i.e., the curvature) of a function. 
+
+For a function $f: \mathbb{R}^n \to \mathbb{R}$, the Hessian is a square $n \times n$ matrix of its second-order partial derivatives:
+
+$$\displaystyle H = \begin{bmatrix} 
+\frac{\partial^2 f}{\partial x_1^2} & \frac{\partial^2 f}{\partial x_1 \partial x_2} & \cdots & \frac{\partial^2 f}{\partial x_1 \partial x_n} \\ 
+\frac{\partial^2 f}{\partial x_2 \partial x_1} & \frac{\partial^2 f}{\partial x_2^2} & \cdots & \frac{\partial^2 f}{\partial x_2 \partial x_n} \\ 
+\vdots & \vdots & \ddots & \vdots \\ 
+\frac{\partial^2 f}{\partial x_n \partial x_1} & \frac{\partial^2 f}{\partial x_n \partial x_2} & \cdots & \frac{\partial^2 f}{\partial x_n^2} 
+\end{bmatrix}$$
+
+{: .note-title }
+> Note
+>
+> A twice-differentiable function is convex if and only if its Hessian matrix is positive semi-definite ($$H \succeq 0$$, meaning all eigenvalues are $$\geq 0$$) for all points in its domain.
