@@ -41,7 +41,7 @@ $$\begin{align}
 \sigma(\mathbf{z})_i &= \frac{e^{z_i}}{\sum_{j=1}^{n} e^{z_j}} \\\\[6pt]
 &= \frac{e^{z_i}}{\sum_{j=1}^{n} e^{z_j}} \cdot \frac{e^{-M}}{e^{-M}} \quad \text{with }M=max_i(z_i) \\\\[6pt]
 &= \frac{e^{z_i-M}}{\sum_{j=1}^{n} e^{z_j-M}} \\\\[6pt]
-&= \frac{e^{z_i}}{\sum_{j=1}^{n} e^{z_j}} \quad \text{with }\mathbf{x} = \mathbf{z} - M \\\\[6pt]
+&= \frac{e^{x_i}}{\sum_{j=1}^{n} e^{x_j}} \quad \text{with }\mathbf{x} = \mathbf{z} - M \\\\[6pt]
 &= \sigma(\mathbf{x})_i
 \end{align}$$
 
