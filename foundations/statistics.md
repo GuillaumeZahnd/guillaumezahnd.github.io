@@ -29,9 +29,9 @@ Consider a sample of size $$n$$ drawn from a larger, unknown population, with sa
 
 $$SEM = \frac{\sigma}{\sqrt{n}}$$
 
-For a significance level $$\alpha = 0.05$$ (corresponding to a confidence level of $$1 - \alpha = 0.95$$), the margin of error for a symmetric 95% confidence interval around the sample mean $$\bar{x}$$ is calculated by scaling the SEM by the normal critical value $$z_{\alpha/2} \approx 1.96$$:
+For a significance level $$\alpha = 0.05$$ (corresponding to a confidence level of $$1 - \alpha = 0.95$$), the margin of error for a symmetric 95% confidence interval around the sample mean $$\mu$$ is calculated by scaling the SEM by the normal critical value $$z_{\alpha/2} \approx 1.96$$:
 
-$$\text{CI}_{0.95} = \bar{x} \pm 1.96 \cdot \text{SEM}$$
+$$\text{CI}_{0.95} = \mu \pm 1.96 \cdot \text{SEM}$$
 
 {: .note-title }
 > Note
