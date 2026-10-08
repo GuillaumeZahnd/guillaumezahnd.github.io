@@ -23,6 +23,17 @@ $$\displaystyle Z = \frac{x - \mu}{\sigma}$$
 > - ca. $$95\%$$ of all samples satisfy $$-2 \leq Z \leq 2$$
 > - ca. $$99.7\%$$ of all samples satisfy $$-3 \leq Z \leq 3$$
 
+# Standard Error of the Mean (SEM)
+
+Consider a sample of size $n$ drawn from a larger, unknown population, with sample standard deviation $\sigma$. The Standard Error of the Mean (SEM) quantifies the uncertainty of the sample mean as an estimator of the true population mean:
+
+$$SEM = \frac{\sigma}{\sqrt{n}}$$
+
+{: .note-title }
+> Note
+>
+> The SEM does not measure the variability of individual observations; that dispersion is captured by the standard deviation ($\sigma$).
+
 ## Power analysis
 
 The validity of a statistical test is governed by five interdependent parameters (see Table below). 
