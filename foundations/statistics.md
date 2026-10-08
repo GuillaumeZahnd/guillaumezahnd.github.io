@@ -44,15 +44,20 @@ The validity of a statistical test is governed by five interdependent parameters
 
 | Parameter | Notation | Description | Controllability |
 | :--- | :--- | :--- | :--- |
-| **Minimum detectable effect** | $$\delta=\mu_1 - \mu_2$$ | Magnitude of the expected difference. Larger effects are easier to observe. | Fixed. The target is set by research goals, but the underlying effect magnitude is fixed. |
+| **Minimum detectable effect** | $$\delta=\mu_1 - \mu_2$$ | Magnitude of the expected difference under the alternative hypothesis. Larger effects are easier to observe. | Fixed. The target is set by research goals, but the underlying effect magnitude is fixed. |
 | **Sample size** | $$n$$ | Number of observations. | High, within budget. This is the primary lever for controlling power. |
-| **Variance** | $$\sigma^2$$ | Noise in the data. | Low, via experimental control and measurement precision. |
-| **Significance level** | $$\alpha$$ | False positive rate (specificity). | High, specified upfront. Corresponds to the p-value threshold. |
-| **Statistical power** | $$1 - \beta$$ | True positive rate (sensitivity). | High, specified upfront. |
+| **Variance** | $$\sigma_1^2, \sigma_2^2$$ | Noise in the data. | Low, via experimental control and measurement precision. |
+| **Significance level** | $$\alpha$$ | False positive rate (specificity, type I error rate under the null hypothesis). | High, specified upfront. Corresponds to the p-value threshold. |
+| **Statistical power** | $$1 - \beta$$ | True positive rate (sensitivity, type II error rate under the alternative hypothesis). | High, specified upfront. |
 
-Mathematically, these variables exist in a closed system where fixing any four uniquely determines the fifth (see Equation below).
+Fixing any four of these quantities determines the fifth. For a two-sided test under the normal approximation:
 
-$$n = \frac{2 \sigma^2}{\delta^2} \Big( Z_{1-\alpha/2} + Z_{1-\beta} \Big)^2$$
+$$n = \frac{\sigma_d^2}{\delta^2} \Big( Z_{1-\alpha/2} + Z_{1-\beta} \Big)^2$$
+
+where $$Z_p$$ is the $$p$$-quantile of the standard normal distribution, and $$\sigma_d^2$$ is the variance of the difference being tested:
+
+- **Paired test** (two measurements on the same units): $$\sigma_d^2 = \sigma_1^2 + \sigma_2^2 - 2\rho\sigma_1\sigma_2$$, where $\rho$ is the correlation between the two measurements across units. Here $$n$$ is the number of pairs. With equal variances, $$\sigma_d^2 = 2\sigma^2(1-\rho)$$, so a positive correlation reduces the required sample size.
+- **Unpaired test** (two independent groups): $$\sigma_d^2 = \sigma_1^2 + \sigma_2^2$$. Here $$n$$ is the number of observations in each group.
 
 ## Classification
 
