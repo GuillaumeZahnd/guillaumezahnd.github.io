@@ -56,7 +56,7 @@ $$n = \frac{\sigma_d^2}{\delta^2} \Big( Z_{1-\alpha/2} + Z_{1-\beta} \Big)^2$$
 
 where $$Z_p$$ is the $$p$$-quantile of the standard normal distribution, and $$\sigma_d^2$$ is the variance of the difference being tested:
 
-- **Paired test** (two measurements on the same units): $$\sigma_d^2 = \sigma_1^2 + \sigma_2^2 - 2\rho\sigma_1\sigma_2$$, where $\rho$ is the correlation between the two measurements across units. Here $$n$$ is the number of pairs. With equal variances, $$\sigma_d^2 = 2\sigma^2(1-\rho)$$, so a positive correlation reduces the required sample size.
+- **Paired test** (two measurements on the same units): $$\sigma_d^2 = \sigma_1^2 + \sigma_2^2 - 2\rho\sigma_1\sigma_2$$, where $$\rho$$ is the correlation between the two measurements across units. Here $$n$$ is the number of pairs. With equal variances, $$\sigma_d^2 = 2\sigma^2(1-\rho)$$, so a positive correlation reduces the required sample size.
 - **Unpaired test** (two independent groups): $$\sigma_d^2 = \sigma_1^2 + \sigma_2^2$$. Here $$n$$ is the number of observations in each group.
 
 ## Classification
